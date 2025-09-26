@@ -45,6 +45,11 @@ edades.filter( (edad) => edad >= 18 )
 
 const nombre = ["pEdro Vazquez", "kylE whitemore", "aNtia", "Pepe", "marIa"]
 
+/**
+ * Pone el nombre en mayúsculas
+ * @param {String[]} nombre 
+ * @returns El nombre en mayúsculas
+ */
 function mayusculas (nombre){
     return nombre.map(nombre => nombre.toUpperCase());
 }
@@ -52,32 +57,68 @@ function mayusculas (nombre){
 
 const precios = [10, 6.99, 8, 7.56]
 
+/**
+ * Devuelve los precios con iva
+ * @param {number[]} precios 
+ * @returns {number[]} El precio con iva
+ */
+
 function iva (precios){
-    return precios.map(precio => precio *1.21);
+    return precios.map(precio => precio * 1.21);
 
 }
 
 const numeros = [4, 5,6,9,76,80,26];
-
+/**
+ * Devuelve los números impares elevados al cuadrado
+ * @param {number[]} numeros Los numeros del array
+ * @returns {number[]} Los impares multiplicados elevado por dos
+ */
 function imparesCuadrados(numeros){
-    return numeros.filter( numero => numero % 2 !== 0).map(numero => numero * numero)
+    return numeros
+        .filter( numero => numero % 2 !== 0)    
+        .map(numero => numero * numero)
 }
+console.log(imparesCuadrados(numeros));
+
 
 const correos = ["  usuario1@gmail.com  ", "  prueba@hotmail.com", "test@yahoo.es   "];
-
+/**
+ * Quita los espacios de los correos
+ * @param {string[]} correos 
+ * @returns El email sin espacios
+ */
 function normalizarEmail(correos){
-    return correos.map(correo => correo.trim());
+    return correos
+        .map(correo => correo.trim());
+}
+console.log(normalizarEmail(correos));
+
+
+/**
+ * Devuelve los nombres que tienen más tamaño que el pasado
+ * @param {string[]} nombre 
+ * @param {number} size 
+ * @returns {string[]}Devuelve los nombres que son mayor al tamaño
+ */
+function filtrarLongitud(name = [], size=0){
+    return name
+        .filter(name => name.length >= size)
 }
 
-function filtrarLongitud(nombre, tamño){
-    return nombre.filter(nombre => nombre.length >= tamaño)
-}
+console.log(filtrarLongitud(names, 5));
 
-function normalizarNombres(arr) {
-  return arr.map(nombre => 
+
+/**
+ * Pone en mayuscula la primera letra del nombre y del apellido
+ * @param {string[]} nombre
+ * @returns El nombre y apellido con la primera en mayusculas
+ */
+function normalizarNombres(nombre) {
+  return nombre.map(nombre => 
     nombre
       .toLowerCase()
-      .split(" ")
+      .split(" ")  //devuelve un array
       .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
       .join(" ")
   );
