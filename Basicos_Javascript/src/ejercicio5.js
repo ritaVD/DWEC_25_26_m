@@ -133,8 +133,8 @@ const productos = [
 //Se pide:
 //1. Obetener un array con los nombres de todos los productos que están agotados
 /**
- * 
- * @param {*} producto 
+ * Devuelve un array con los productos que están agotados (stock 0)
+ * @param {array} producto 
  * @returns 
  */
 function agotados(producto){
@@ -146,6 +146,11 @@ console.log(agotados(productos));
 
 
 //2. Calcular el valor total del inventario (precio*stock) de todos los productos
+/**
+ * Calcula el valor total del inventario (precio * stock) de todos los productos
+ * @param {array} lista 
+ * @returns 
+ */
 function valorInventario(lista){
   return lista.reduce((total, p) => total + (p.precio * p.stock), 0);
 }
@@ -154,13 +159,23 @@ console.log(valorInventario(productos));
 
 
 //3. Filtrar los productos que pertenecen a la categoría 'Tecnología' y tienen un precio mayor a 500
+/**
+ * Filtra los productos de la categoría 'Tecnología' con precio mayor a 500
+ * @param {array} lista 
+ * @returns 
+ */
 function tecnologiaCaros(lista){
-  return lista.filter(p => p.categoria === 'Tecnología' && p.precio > 500);
+  return lista.filter(producto => producto.categoria === 'Tecnología' && producto.precio > 500);
 }
 console.log(tecnologiaCaros(productos));
 
 
-//4. Crear u nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoria "Ropa".
+//4. Crear un nuevo array de productos aplicando un descuento del 10% a todos los productos de la categoria "Ropa".
+/**
+ * Crea un nuevo array de productos aplicando un descuento del 10% a los productos de la categoría 'Ropa'
+ * @param {array} lista 
+ * @returns 
+ */
 function aplicarDescuento(lista){
   return lista.map(p => {
     if (p.categoria === 'Ropa') {
