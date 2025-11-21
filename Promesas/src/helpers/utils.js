@@ -39,3 +39,7 @@ export const dataJSONAsync = async () => {
 };
 
 //Crear una funcion que le pase por parameytro una ciudad y me devueva temperatura y humedad y viento actual usando la api de openweather
+
+
+
+

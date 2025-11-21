@@ -1,0 +1,45 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# SQLite database files
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Vite build output
+dist/
+.cache/
+vite-cache/
+*.tsbuildinfo
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# VSCode settings (optional)
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage (si llegas a usar tests)
+coverage/
