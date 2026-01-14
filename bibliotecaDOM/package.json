@@ -1,15 +1,16 @@
 {
-  "name": "vite-project",
+  "name": "bibliotecadom",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
-    "server:up": "json-server --watch src/db.js --port 1492"
+    "server:up": "json-server --watch src/db/db.js --port 1492"
   },
   "devDependencies": {
+    "typescript": "~5.9.3",
     "vite": "^7.2.4"
   },
   "dependencies": {

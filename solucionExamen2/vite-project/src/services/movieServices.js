@@ -1,16 +1,14 @@
-const moviesCache = [] //Array vacio donde guardamos las peliculas del backend
-const URL = "http://192.168.50.120:1492/api/movies" //URL donde se piden las peliculas
+let moviesCache = [] //Array vacio donde guardamos las peliculas del backend
+const URL = "http://localhost:1492/movies" //URL donde se piden las peliculas
 const fetchMovies = async () => {
     try {
         const response = await fetch(URL)
         if (!response.ok){
             throw new Error('Error en el fetching')
         }
-        //const data = await response.json();
-        //vaciar disque
-        //moviesCache.length = 0; 
-        moviesCache.push(...data.results); //rellenamos el array
-        //moviesCache =  data.results; //ojo con esto y isaias y sus datas 
+        const data = await response.json(); 
+        
+        moviesCache =  data;  
         return moviesCache;
     }catch (err){
         console.log(err)

@@ -1,3 +1,5 @@
+import { Storgae } from "../utils/storage";
+
 export const createMovieCard = (movie) => {
     const card = document.createElement('div');
     card.className = 'movie-card';
@@ -11,7 +13,7 @@ export const createMovieCard = (movie) => {
     //Poster
     const poster = document.createElement('img')
     poster.className = 'movie-poster';
-    poster.src = `http://192.168.50.120${movie.poster_path}`;
+    poster.src = `${movie.poster_path}`;
 
     //Info de la película
     const info = document.createElement('div')
@@ -45,11 +47,11 @@ export const createMovieCard = (movie) => {
 
     })
 
-    card.addEventListener('dbclick', () => {
-        card.remove();
+    card.addEventListener('dblclick', () => {
+       card.remove();
     })
 
-    card.addEventListener('contextmenu', () => {
+    card.addEventListener('contextmenu', (e) => {
         e.preventDefault();
         if (card.classList.contains('movie-watched')){
             card.classList.remove('movie-watched')
@@ -59,7 +61,7 @@ export const createMovieCard = (movie) => {
     })
     
 
-
+return card;
      
 }
 
